@@ -14,13 +14,13 @@ function App() {
     const newTodos = [
       ...todos, // 기존 할 일 목록 복사
       {
-        id: Date.now(), // 고유한 ID 생성
-        text, // 전달된 할 일 내용
-        completed: false, // 기본 완료 상태는 false로 설정
+        id: Date.now(), // 현재 시간을 ID로 사용함 (매번 고유한 값이 생김)
+        text, // 할 일의 내용 (매개변수로 받은 텍스트)
+        completed: false, // 처음 추가할 때는 완료되지 않은 상태로 설정함
       },
     ];
     setTodos(newTodos); // 상태 업데이트
-    localStorage.setItem("todos", JSON.stringify(newTodos)); // 로컬 스토리지에 저장
+    localStorage.setItem("todos", JSON.stringify(newTodos)); // 로컬 스토리지에 새 할 일 목록을 저장함 (문자열로 변환해서 저장해야 함)
   };
 
   return (
